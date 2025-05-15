@@ -121,6 +121,8 @@ resources: {}
   #   memory: 128Mi
 
 helperPod:
+  # Timeout in seconds waiting for the helper pod to complete successfully
+  cmdTimeoutSeconds: 120
   resources: {}
     # limits:
     #   cpu: 100m
@@ -171,3 +173,4 @@ configmap:
 
 # Number of retries of failed volume deletion. 0 means retry indefinitely.
 # deletionRetryCount: 15
+

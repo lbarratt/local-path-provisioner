@@ -14,6 +14,9 @@ data:
     {{- with .Values.sharedFileSystemPath }}
     {{- $config = set $config "sharedFileSystemPath" . }}
     {{- end }}
+    {{- with .Values.helperPod.cmdTimeoutSeconds }}
+    {{- $config = set $config "cmdTimeoutSeconds" . }}
+    {{- end }}
     {{- with .Values.storageClassConfigs }}
     {{- $configs := dict }}
     {{- range $key, $value := . }}
